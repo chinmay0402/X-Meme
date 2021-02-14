@@ -7,7 +7,7 @@ import Meme from "./components/Meme"
 const App = () => {
   const [showAddMeme, setShowAddMeme] = useState(false)
   const [memes, setMemes] = useState([])
-  const PORT = 8081
+  const PORT = 5000
   useEffect(() => {
     const getMemes = () => {
       const pathname = window.location.pathname;

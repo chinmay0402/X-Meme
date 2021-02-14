@@ -1,2 +1,3 @@
-/xmeme-frontend/node_modules
+/client/node_modules
 /xmeme-backend/node_modules
+node_modules
