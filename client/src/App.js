@@ -11,7 +11,7 @@ const App = () => {
   useEffect(() => {
     const getMemes = () => {
       const pathname = window.location.pathname;
-      fetch(`http://localhost:${PORT}${pathname}`)
+      fetch("/memes")
         .then(res => {
           return res.json();
         })
@@ -30,7 +30,7 @@ const App = () => {
 
   // Add Meme
   const addMeme = async (meme) => {
-    const res = await fetch(`http://localhost:${PORT}/memes`, {
+    const res = await fetch("/memes", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -43,7 +43,7 @@ const App = () => {
 
   // Edit meme
   const editMeme = async (id, meme) => {
-    fetch(`http://localhost:${PORT}/memes/${id}`, {
+    fetch(`/memes/${id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json",
@@ -61,7 +61,7 @@ const App = () => {
 
   // Delete Meme
   const deleteMeme = async (id) => {
-    fetch(`http://localhost:${PORT}/memes/${id}`, {
+    fetch(`/memes/${id}`, {
       method: "DELETE",
     })
       .then(() => {
