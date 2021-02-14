@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000
 
 // app.use(morgan("tiny"));
 // connect to db
-const dbURI = "mongodb://localhost:27017/xmeme";
+const dbURI = "mongodb+srv://memeninja:mongodb123@nodejs-tutorial.atbjm.mongodb.net/xmeme?retryWrites=true&w=majority";
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
