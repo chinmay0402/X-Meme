@@ -13,7 +13,7 @@ const PORT = process.env.PORT || 5000
 
 // app.use(morgan("tiny"));
 // connect to db
-const dbURI = "mongodb+srv://memeninja:mongodb123@nodejs-tutorial.atbjm.mongodb.net/xmeme?retryWrites=true&w=majority";
+const dbURI = process.env.mongodbURI;
 mongoose.connect(dbURI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -142,8 +142,8 @@ app.delete("/memes/:id", (req, res) => {
         })
 })
 
-app.get('*', (req,res) => {
-    res.sendFile(path.join(__dirname+"/client/build/index.html"));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname + "/client/build/index.html"));
 })
 
 app.use((req, res) => { // if any of the above cases are not valid for the requested endpoint 
